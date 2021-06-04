@@ -1,3 +1,4 @@
+require('dotenv').config();
 const mongoose = require("mongoose");
 const express = require("express");
 const cors = require("cors");
@@ -11,7 +12,7 @@ const bodyParser = require("body-parser");
 const app = express();
 //----------------------------------------- END OF IMPORTS---------------------------------------------------
 mongoose.connect(
-  "mongodb+srv://akshay:3kakshay0682@akscluster.gpmyf.mongodb.net/login2?retryWrites=true&w=majority",
+  process.env.MONGO_URI,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
